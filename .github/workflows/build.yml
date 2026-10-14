@@ -22,8 +22,11 @@ jobs:
       - name: Install Android SDK
         uses: android-actions/setup-android@v3
 
+      - name: Install Android components
+        run: sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+
       - name: Build APK
-        run: gradle assembleDebug
+        run: bash gradlew assembleDebug
 
       - name: Save APK
         uses: actions/upload-artifact@v4
