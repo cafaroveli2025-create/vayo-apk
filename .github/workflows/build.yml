@@ -22,17 +22,18 @@ jobs:
 
       - name: Install Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
 
-      - name: Install Android components
+      - name: Accept Android licenses
         run: yes | sdkmanager --licenses
-
 
       - name: Build APK
         run: bash gradlew assembleDebug
 
       - name: Save APK
         uses: actions/upload-artifact@v4
-        with;
-          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+        with:
           name: VAYO-APK
           path: app/build/outputs/apk/debug/app-debug.apk
+
