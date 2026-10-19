@@ -24,7 +24,8 @@ jobs:
         uses: android-actions/setup-android@v3
 
       - name: Install Android components
-        run: sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+        run: yes | sdkmanager --licenses
+
 
       - name: Build APK
         run: bash gradlew assembleDebug
