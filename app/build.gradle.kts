@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.ali.cyber"
+    namespace = "com.vayo.app"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.ali.cyber"
+        applicationId = "com.vayo.app"
         minSdk = 23
         targetSdk = 35
         versionCode = 1
